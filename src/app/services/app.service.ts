@@ -64,8 +64,9 @@ export class AppService {
 
   logout() { 
   //&id_token_hint=${window.localStorage.getItem(this.idToken)}&post_logout_redirect_uri=${this.redirectUri}
+  //&post_logout_redirect_uri=${this.redirectUri}&id_token_hint=${token}`
    const token = window.localStorage.getItem(this.idToken);
-    window.location.href = `http://localhost:8080/realms/${this.realm}/protocol/openid-connect/logout&post_logout_redirect_uri=${this.redirectUri}&id_token_hint=${token}`;
+    window.location.href = `http://localhost:8080/realms/${this.realm}/protocol/openid-connect/logout`;
     window.localStorage.clear();
   }
 
